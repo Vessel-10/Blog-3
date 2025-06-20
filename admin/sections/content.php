@@ -1,16 +1,16 @@
+<?php include '../logic/breadcrumb.php' ?>
 
-    <div class="content">
-        <?php
-            // Default page
-            $page = $_GET['page'] ?? 'home';
-
-            // Security: allow only safe pages
-            $allowedPages = ['home', 'post', 'category', 'comment', 'profile'];
-
-            if (in_array($page, $allowedPages)) {
-                include "../pages/$page.php";  // Example: sections/pages/posts.php
-            } else {
-                echo "<p>Page not found.</p>";
-            }
-        ?>
+<div class="content">
+    <div class="top-menu">
+        <nav class="breadcrumb">
+            <a href="dashboard.php">Dashboard</a>
+            <?php if ($page != 'dashboard'): ?>
+                <span> / </span>
+                <span><?= $currentPageName ?></span>
+            <?php endif; ?>
+        </nav>
     </div>
+    <div class="context">
+        <?php  include '../logic/page-switch.php' ?>
+    </div>
+</div>
