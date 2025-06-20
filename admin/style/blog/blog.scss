@@ -1,4 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Instrument+Serif:ital@0;1&display=swap');
+:root{
+    --nav-link-bg: #0A0A0A;
+}
 *{
     margin: 0;
     padding: 0;
+}
+
+// General 
+$side-bar: 250px;
+
+@mixin author-font{
+    font-size: 22px;
+    font-family: "Cedarville Cursive", cursive;
+    font-weight: 900;
+    font-style: normal;
+}
+@mixin link-font{
+    font-size: 16px;
+    font-family: "Instrument Serif", serif;
+    font-weight: 900;
+    font-style: normal;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+}
+.container{
+    display: flex;
+    gap: 10px;
+    .side-bar{
+        width: $side-bar;
+        height: 100vh;
+        background: #cfcfcf;
+        padding: 10px;
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            li{
+                list-style: none;
+                a{
+                    display: block;
+                    @include link-font();
+                    text-decoration: none;
+                    padding: 8px 12px;
+                    color: black;
+                    border-radius: 4px;
+                    &:hover{
+                        background-color: var(--nav-link-bg);
+                        color: white;
+                    }
+                    &.active{
+                        background-color: #3C3E33;
+                        color: white;
+                        &:hover{
+                            background: var(--nav-link-bg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .content{
+        margin-right: calc(10px + $side-bar);
+        width: calc(100% - $side-bar);
+    }
 }

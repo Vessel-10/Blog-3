@@ -1,6 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Instrument+Serif:ital@0;1&display=swap");
+:root {
+  --nav-link-bg: #0A0A0A;
+}
+
 * {
   margin: 0;
   padding: 0;
+}
+
+.container {
+  display: flex;
+  gap: 10px;
+}
+.container .side-bar {
+  width: 250px;
+  height: 100vh;
+  background: #cfcfcf;
+  padding: 10px;
+}
+.container .side-bar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.container .side-bar ul li {
+  list-style: none;
+}
+.container .side-bar ul li a {
+  display: block;
+  font-size: 16px;
+  font-family: "Instrument Serif", serif;
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 8px 12px;
+  color: black;
+  border-radius: 4px;
+}
+.container .side-bar ul li a:hover {
+  background-color: var(--nav-link-bg);
+  color: white;
+}
+.container .side-bar ul li a.active {
+  background-color: #3C3E33;
+  color: white;
+}
+.container .side-bar ul li a.active:hover {
+  background: var(--nav-link-bg);
+}
+.container .content {
+  margin-right: 260px;
+  width: calc(100% - 250px);
 }
 
 /*# sourceMappingURL=blog.css.map */
