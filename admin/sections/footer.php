@@ -1,5 +1,5 @@
 
-<!-- <script>
+<script>
     // Wait until the DOM is fully loaded
     document.addEventListener("DOMContentLoaded", function () {
         const links = document.querySelectorAll(".nav-list a");
@@ -17,6 +17,6 @@
             });
         });
     });
-</script> -->
+</script>
     </body>
 </html>
